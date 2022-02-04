@@ -1,0 +1,15 @@
+.floating-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color:white;
+    border-radius: 10px 10px;
+    cursor: pointer;
+}
+.floating-button:hover {
+    background-color: gray;
+    transition-duration: .35s;
+    -webkit-transfrom: scale(0.9);
+    transform: scale(0.9);
+}
