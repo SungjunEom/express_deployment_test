@@ -29,6 +29,19 @@ export default function App() {
         </div>
       </div>
       <Outlet />
+      <footer>
+        <div className="footer-hr"><hr/></div>
+        <div className="footer-content">
+        <div style={{paddingTop:"6rem"}}>
+          © 2022 Test Company.<br/></div>
+          <div style={{paddingTop:"2.5rem"}}>
+          Contact information Legal information Improve this site Projects Manage your tracker settings<br/></div>
+          <div style={{paddingTop:"2.5rem",paddingBottom:"6rem"}}>          
+          Test Webpage and Test Company are registered trademarks.<br/>
+          All other trademarks are the property of their respective owners.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -37,12 +37,6 @@ export default function ButtonParty() {
           <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
           <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="red"/></div>
         </div>
-        <div className="content">
-          <div><Button width="100%" height="100%" value="NORMAL BUTTON" backgroundColor="black" color="white"/></div>
-          <div><Button width="100%" height="100%" value="NORMAL BUTTON" backgroundColor="black" color="white"/></div>
-          <div><Button width="100%" height="100%" value="NORMAL BUTTON" backgroundColor="black" color="white"/></div>
-          <div><Button width="100%" height="100%" value="NORMAL BUTTON" backgroundColor="black" color="white"/></div>
-        </div>
       </div>
   );
 }

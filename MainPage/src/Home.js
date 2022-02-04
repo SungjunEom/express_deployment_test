@@ -10,13 +10,49 @@ export default function Home() {
     <div className="Home">
       <div className="home-content">
         <section id="takeover">
-            <div style={{color:"white",filter:"brightness(100%)"}}><h1>테스트</h1></div>
+            <div id="takeover-content">
+                <div><h1>This is a Test<br/>Another Test<br/>The other test<br/>
+                </h1>
+                <br/><br/>
+                </div>
+                <div></div>
+            </div>
         </section>
         <section className="p-strip">
-            test
+            <div className="row">
+                <h2>Energize your engineers</h2>
+                <div></div>
+                <p className="p-heading">Better security. More packages. Newer tools. All your open source,<br/>from cloud to edge.</p>
+                <div></div>
+                <p>66% of experienced developers prefer Ubuntu.That’s why Ubuntu supports the fastest, biggest and most successful digital operations.</p>
+            </div>
         </section>
         <section className="p-strip--light">
-            test2
+            <div className="row">
+            <h2>Energize your engineers</h2>
+                <div></div>
+                <p className="p-heading">Better security. More packages. Newer tools. All your open source,<br/>from cloud to edge.</p>
+                <div></div>
+                <p>66% of experienced developers prefer Ubuntu.That’s why Ubuntu supports the fastest, biggest and most successful digital operations.</p>
+            </div>
+        </section>
+        <section className="p-strip">
+            <div className="row">
+            <h2>Energize your engineers</h2>
+                <div></div>
+                <p className="p-heading">Better security. More packages. Newer tools. All your open source,<br/>from cloud to edge.</p>
+                <div></div>
+                <p>66% of experienced developers prefer Ubuntu.That’s why Ubuntu supports the fastest, biggest and most successful digital operations.</p>
+            </div>
+        </section>
+        <section className="p-strip--light">
+            <div className="row">
+            <h2>Energize your engineers</h2>
+                <div></div>
+                <p className="p-heading">Better security. More packages. Newer tools. All your open source,<br/>from cloud to edge.</p>
+                <div></div>
+                <p>66% of experienced developers prefer Ubuntu.That’s why Ubuntu supports the fastest, biggest and most successful digital operations.</p>
+            </div>
         </section>
       </div>
     </div>
