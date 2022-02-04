@@ -53,3 +53,26 @@
     flex-direction: column;
     align-items: center;
 }
+a {
+    text-decoration: none;
+}
+.home-content {
+    display:flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content:start;
+}
+.p-strip {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    background-color: transparent;
+}
+.p-strip--light {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f7f7f7;
+}

@@ -1,59 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import Button from './Button.js';
-import BlackRoundButton from './BlackRoundButton.js';
-import BoldTextButton from './BoldTextButton.js';
+// import Button from './Button.js';
+// import BlackRoundButton from './BlackRoundButton.js';
+// import BoldTextButton from './BoldTextButton.js';
+import {Route} from 'react-router-dom';
+import Home from './Home.js';
+import ContactUs from './ContactUs.js';
 
-function test() {
-  console.log("test");
-}
-function test2() {
-  window.location.replace('http://www.google.com');
-}
 function App() {
   return (
     <div className="App">
-      <div className="head">
-        <h1 className="site-headline">TEST WEBPAGE</h1>
-        <div className="menu">
-          <BoldTextButton width="50px" height="50px" value="HOME" onClick={test} />
-          <BoldTextButton width="70px" height="50px" value="GOOGLE" onClick={test2} />
-          <BoldTextButton width="50px" height="50px" value="TEST" onClick={test} />
-          <BoldTextButton width="50px" height="50px" value="TEST2" onClick={test} />
-          <BoldTextButton width="130px" height="50px" value="CONTACT US" onClick={test} />
-        </div>
-      </div>
-      <div className="content-container"> 
-        <div className="content">
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" color="red" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="blue"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="red"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="blue"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="red"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="blue"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="red"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="blue"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="red"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="blue"/></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="BRButton+" backgroundColor="red"/></div>
-        </div>
-        <div className="content">
-          <div><Button width="100%" height="100%" value="NORMAL BUTTON" backgroundColor="black" color="white"/></div>
-          <div><Button width="100%" height="100%" value="NORMAL BUTTON" backgroundColor="black" color="white"/></div>
-          <div><Button width="100%" height="100%" value="NORMAL BUTTON" backgroundColor="black" color="white"/></div>
-          <div><Button width="100%" height="100%" value="NORMAL BUTTON" backgroundColor="black" color="white"/></div>
-        </div>
-      </div>
+      <Route path="*" element={<Home />} />
+      <Route path="/ContactUs" element={<ContactUs />} />
     </div>
   );
 }
