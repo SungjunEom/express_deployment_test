@@ -17,10 +17,10 @@ function App() {
         <h1 className="site-headline">TEST WEBPAGE</h1>
         <div className="menu">
           <BoldTextButton width="50px" height="50px" value="HOME" onClick={test} />
-          <BoldTextButton width="50px" height="50px" value="GOOGLE" onClick={test2} />
+          <BoldTextButton width="70px" height="50px" value="GOOGLE" onClick={test2} />
           <BoldTextButton width="50px" height="50px" value="TEST" onClick={test} />
           <BoldTextButton width="50px" height="50px" value="TEST2" onClick={test} />
-          <BoldTextButton width="100px" height="50px" value="CONTACT US" onClick={test} />
+          <BoldTextButton width="130px" height="50px" value="CONTACT US" onClick={test} />
         </div>
       </div>
       <div className="content-container">
