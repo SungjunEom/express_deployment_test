@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Button extends React.Component {
+class BlackRoundButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,11 +15,10 @@ class Button extends React.Component {
     }
     render() {
         return (
-        <div className="floating-button" style={{width:this.state.width,height:this.state.height}} onClick={this.state.clickEvent}>
+        <div className="floating-button brb" style={{width:this.state.width,height:this.state.height}} onClick={this.state.clickEvent}>
             {this.state.text}
         </div>
         );
     }
 }
-
-export default Button;
+export default BlackRoundButton;
