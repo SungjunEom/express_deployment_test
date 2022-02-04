@@ -14,9 +14,10 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="*" element={<Home />} />
+          <Route path="Home" element={<Home />} />
           <Route path="ContactUs" element={<ContactUs />} />
           <Route path="ButtonParty" element={<ButtonParty />} />
+          <Route path="" element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>
