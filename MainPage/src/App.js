@@ -25,16 +25,22 @@ function App() {
       </div>
       <div className="content-container">
         <div className="content">
-          <div><BlackRoundButton width="50px" height="50px" value="TEST" /></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" color="red" /></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="blue"/></div>
           <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="red"/></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="blue"/></div>
           <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="red"/></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="blue"/></div>
           <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="red"/></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="blue"/></div>
           <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="red"/></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="blue"/></div>
           <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
-          <div><BlackRoundButton width="100%" height="100%" value="TEST" /></div>
+          <div><BlackRoundButton width="100%" height="100%" value="TEST" backgroundColor="red"/></div>
         </div>
       </div>
     </div>
