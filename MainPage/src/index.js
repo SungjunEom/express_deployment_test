@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import './App.css';
+// import './App.css';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import Home from './Home.js';
@@ -13,7 +13,8 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route path="/" element={<App />}>
+          <Route path="*" element={<Home />} />
           <Route path="ContactUs" element={<ContactUs />} />
           <Route path="ButtonParty" element={<ButtonParty />} />
         </Route>
