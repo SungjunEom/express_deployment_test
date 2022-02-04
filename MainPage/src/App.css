@@ -17,6 +17,7 @@
 }
 .brb {
     background-color: black;
+    border-radius: 10px 10px;
     color:white;
 }
 .brb:hover {
