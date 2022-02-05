@@ -11,7 +11,7 @@ export default function Products() {
     <div className="products">
       <div className="products-menu">
         <h3 style={{fontSize:"2rem"}}>We are selling now:</h3>
-        <Link to="/Products/Books"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Books"/></div></Link>
+        <Link to="/Products/Books"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="귀뚜기"/></div></Link>
         <Link to="/Products/Books"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Books"/></div></Link>
         <Link to="/Products/Books"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Books"/></div></Link>
         <Link to="/Products/Books"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Books"/></div></Link>

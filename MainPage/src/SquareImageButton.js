@@ -9,7 +9,8 @@ class SquareImageButton extends React.Component {
             text: props.value,
             color: props.color,
             backgroundColor:props.backgroundColor,
-            clickEvent: props.onClick
+            clickEvent: props.onClick,
+            imageSource: props.imageSource
         }
     }
     componentDidMount() {
@@ -17,8 +18,8 @@ class SquareImageButton extends React.Component {
     }
     render() {
         return (
-        <div className="floating-button" style={{width:this.state.width,height:this.state.height, color:this.state.color,backgroundColor:this.state.backgroundColor}} onClick={this.state.clickEvent}>
-            {this.state.text}
+        <div className="floating-button square-image-button" style={{width:this.state.width,height:this.state.height, color:this.state.color,backgroundColor:this.state.backgroundColor}} onClick={this.state.clickEvent}>
+            <img src={this.state.imageSource} width="100%" height="100%"/>
         </div>
         );
     }

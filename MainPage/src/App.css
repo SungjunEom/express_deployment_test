@@ -152,3 +152,11 @@ footer {
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
+.square-image-button {
+    /* border: 1px solid gray; */
+    padding: 0px;
+}
+.square-image-button:hover {
+    -webkit-transfrom: scale(0.9);
+    transform: scale(0.9);
+}
