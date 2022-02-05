@@ -13,11 +13,12 @@ let db = new sqlite.Database('./Products.sqlite', (err) => {
 
 app.use(express.static(path.join(__dirname,'/build')));
 
-app.get('/',(req, res) => {
-    res.sendFile(path.join(__dirname,'build/index.html'));
-})
+// app.get('/',(req, res) => {
+//     res.sendFile(path.join(__dirname,'build/index.html'));
+// })
 
 app.get('/api/goods/:name', (req,res) => {
+    console.log('Got'); 
     const query = `SELECT * FROM ${req.params.name}`;
     db.all(query, (err, row) => {
         res.json({data:row});
@@ -28,4 +29,4 @@ app.get('*',(req,res) => {
     res.sendFile(path.join(__dirname,'build/index.html'));
 })
 
-app.listen(5000);
+app.listen(80);

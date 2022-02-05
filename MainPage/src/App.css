@@ -147,7 +147,7 @@ footer {
     justify-content: flex-start;
     align-items:flex-start;
 }
-.books {
+.product-content {
     display:grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
