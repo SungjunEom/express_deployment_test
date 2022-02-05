@@ -11,28 +11,27 @@ import SERVER_ADDR from './SERVER_ADDR.js';
 class Pokemons extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: null
-    }
-  }
-
-  componentDidMount() {
+    var temp = null;
+    var pokemonsList = null;
     axios.get('/api/goods/Pokemons')
     .then((res)=>{
-      console.log('res.data.data: '+res.data.data);
-      this.setState({
-        data: res.data.data
-      },() => {console.log('this.state.data: '+this.state.data)});
+      temp = res.data.data;
+      pokemonsList = temp.map((elem) => {
+        return <SquareImageButton width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
+      })
+      console.log(pokemonsList);
+      this.state = {
+        data: temp,
+        imgsrc: pokemonsList
+      };
     })
     .catch((err) => {
       console.log('안되네');
     })
-    let pokemonsList = this.state.data.map((elem) => {
-      return <SquareImageButton width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
-    })
-    this.setState({
-      imgsrc: pokemonsList
-    });
+  }
+
+  componentDidMount() {
+    
   }
 
   render() {
