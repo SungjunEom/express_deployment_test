@@ -16,9 +16,11 @@ app.use(express.static(path.join(__dirname,'/build')));
 // app.get('/',(req, res) => {
 //     res.sendFile(path.join(__dirname,'build/index.html'));
 // })
+app.get('/images/:imgsrc',(req, res) => {
+    res.sendFile(path.join(__dirname,`images/${req.params.imgsrc}`));
+})
 
 app.get('/api/goods/:name', (req,res) => {
-    console.log('Got'); 
     const query = `SELECT * FROM ${req.params.name}`;
     db.all(query, (err, row) => {
         res.json({data:row});
