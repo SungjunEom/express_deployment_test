@@ -19,10 +19,10 @@ class Pokemons extends React.Component {
   componentDidMount() {
     axios.get('/api/goods/Pokemons')
     .then((res)=>{
-      console.log('res.data.data:'+res.data.data);
+      console.log('res.data.data: '+res.data.data);
       this.setState({
         data: res.data.data
-      },() => console.log('this.state.data:'+this.state.data));
+      },() => {console.log('this.state.data: '+this.state.data)});
     })
     .catch((err) => {
       console.log('안되네');
