@@ -8,6 +8,9 @@ import {BrowserRouter,Routes, Route} from 'react-router-dom';
 import Home from './Home.js';
 import ContactUs from './ContactUs';
 import ButtonParty from './ButtonParty.js';
+import Products from './Products.js';
+import NotFound from './NotFound';
+import Books from './Books.js';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,7 +20,12 @@ ReactDOM.render(
           <Route path="Home" element={<Home />} />
           <Route path="ContactUs" element={<ContactUs />} />
           <Route path="ButtonParty" element={<ButtonParty />} />
+          <Route path="Products" element={<Products />}> 
+            <Route path="Books" element={<Books />}/>
+            <Route path="" element={<Books/>} />
+          </Route>
           <Route path="" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
