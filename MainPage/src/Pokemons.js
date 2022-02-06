@@ -14,34 +14,21 @@ export default function Pokemons() {
   useEffect(async() => {
     await axios.get('/api/goods/Pokemons')
     .then((res) => {
-      console.log('res: ',res.data);
       setData(res.data);
     })
   },[])
-  useEffect(() => {
-    console.log(data);
-    if(data != null) {
-      output = data.data.map((elem) => {
-        return <SquareImageButton width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
-      })
-      console.log(output[0]);
-      console.log(data.data[0].ImageSource);
-      return (<div className="product-content">{output}</div>);
-    }
-  },[data]);
+  
+  console.log(data);
+  if(data != null) {
+    output = data.data.map((elem) => {
+      console.log(elem);
+      return <SquareImageButton key={elem.Name} width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
+    })
+    return (<div className="product-content">{output}</div>);
+  }
 
-  return (<div className="product-content">
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} />
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
+  return (<div>
+    <h1>Please wait.</h1>
   </div>);
 
 }

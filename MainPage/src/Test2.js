@@ -14,18 +14,14 @@ export default function Test2() {
   useEffect(async() => {
     await axios.get('/api/goods/Pokemons')
     .then((res) => {
-      console.log('res: ',res.data);
       setData(res.data);
     })
   },[])
   useEffect(() => {
-    console.log(data);
     if(data != null) {
-      output = data.data.map((elem) => {
-        return <SquareImageButton width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
-      })
-      console.log(output[0]);
-      console.log(data.data[0].ImageSource);
+      output = data.data.map((elem,index) => {
+        return <SquareImageButton key={index} width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
+      });
       output =<div className="product-content">{output}</div>;
     }
   },[data]);
@@ -33,7 +29,7 @@ export default function Test2() {
   return (<div className="product-content">
   <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} />
   <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} /> 
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} /> 
+  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
   <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} /> 
   <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} /> 
   <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} /> 
