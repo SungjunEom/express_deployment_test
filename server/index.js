@@ -19,6 +19,9 @@ app.use(express.static(path.join(__dirname,'/build')));
 app.get('/images/:imgsrc',(req, res) => {
     res.sendFile(path.join(__dirname,`images/${req.params.imgsrc}`));
 })
+app.get('/Products/images/:imgsrc',(req,res) => {
+    res.sendFile(path.join(__dirname,`images/${req.params.imgsrc}`));
+})
 
 app.get('/api/goods/:name', (req,res) => {
     const query = `SELECT * FROM ${req.params.name}`;

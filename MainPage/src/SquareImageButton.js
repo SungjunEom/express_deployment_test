@@ -17,6 +17,7 @@ class SquareImageButton extends React.Component {
 
     }
     render() {
+        console.log(this.state.imageSource);
         return (
         <div className="floating-button square-image-button" style={{width:this.state.width,height:this.state.height, color:this.state.color,backgroundColor:this.state.backgroundColor}} onClick={this.state.clickEvent}>
             <img src={this.state.imageSource} width="100%" height="100%"/>

@@ -11,6 +11,7 @@ import ButtonParty from './ButtonParty.js';
 import Products from './Products.js';
 import NotFound from './NotFound';
 import Pokemons from './Pokemons.js';
+import Test2 from './Test2.js';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.render(
           <Route path="ButtonParty" element={<ButtonParty />} />
           <Route path="Products" element={<Products />}> 
             <Route path="Pokemons" element={<Pokemons />}/>
+            <Route path="Test2" element={<Test2 />} />
             <Route path="" element={<Pokemons/>} />
           </Route>
           <Route path="" element={<Home />} />

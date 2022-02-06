@@ -19,7 +19,7 @@ export default function Pokemons() {
     })
   },[])
   useEffect(() => {
-    console.log(data); //Not null
+    console.log(data);
     if(data != null) {
       output = data.data.map((elem) => {
         return <SquareImageButton width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
