@@ -8,6 +8,10 @@ import SquareImageButton from './SquareImageButton.js';
 import axios from 'axios';
 import SERVER_ADDR from './SERVER_ADDR.js';
 
+function gotoDetail(name) {
+  window.location.replace(`/Products/Details/Pokemons/${name}`);
+}
+
 export default function Pokemons() {
   const [data, setData] = useState(null);
   let output = null;
@@ -21,7 +25,7 @@ export default function Pokemons() {
   console.log(data);
   if(data != null) {
     output = data.data.map((elem) => {
-      return <SquareImageButton key={elem.Name} width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
+      return <SquareImageButton key={elem.Name} width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} onClick={()=>{gotoDetail(elem.Name)}} />;
     })
     return (<div className="product-content">{output}</div>);
   }

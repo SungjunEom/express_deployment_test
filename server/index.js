@@ -22,10 +22,20 @@ app.get('/images/:imgsrc',(req, res) => {
 app.get('/Products/images/:imgsrc',(req,res) => {
     res.sendFile(path.join(__dirname,`images/${req.params.imgsrc}`));
 })
+app.get('/Products/Details/:param1/:param2/:imgsrc', (req, res) => {
+    res.sendFile(path.join(__dirname,`images/${req.params.imgsrc}`));
+})
 
-app.get('/api/goods/:name', (req,res) => {
-    const query = `SELECT * FROM ${req.params.name}`;
+app.get('/api/goods/:category', (req,res) => {
+    const query = `SELECT * FROM ${req.params.category}`;
     db.all(query, (err, row) => {
+        res.json({data:row});
+    })
+})
+
+app.get('/api/goods/:category/:name', (req,res) => {
+    const query = `SELECT * FROM ${req.params.category} WHERE Name="${req.params.name}"`;
+    db.all(query, (err,row) => {
         res.json({data:row});
     })
 })

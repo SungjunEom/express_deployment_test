@@ -25,7 +25,7 @@ ReactDOM.render(
           <Route path="Products" element={<Products />}> 
             <Route path="Pokemons" element={<Pokemons />}/>
             <Route path="Test2" element={<Test2 />} />
-            <Route path="Details/:params" element={<ProductDetail />}/>
+            <Route path="Details/:category/:name" element={<ProductDetail />}/>
             <Route path="" element={<Pokemons/>} />
           </Route>
           <Route path="" element={<Home />} />

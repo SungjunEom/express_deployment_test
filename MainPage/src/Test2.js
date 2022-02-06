@@ -9,12 +9,11 @@ import axios from 'axios';
 import SERVER_ADDR from './SERVER_ADDR.js';
 
 function gotoTest(name) {
-  window.location.replace(`/Products/Details/${name}`);
+  window.location.replace(`/Products/Details/Pokemons/${name}`);
 }
 
 export default function Test2() {
   const [data, setData] = useState(null);
-  let output = null;
   useEffect(async() => {
     await axios.get('/api/goods/Pokemons')
     .then((res) => {
