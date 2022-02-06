@@ -21,7 +21,6 @@ export default function Pokemons() {
   console.log(data);
   if(data != null) {
     output = data.data.map((elem) => {
-      console.log(elem);
       return <SquareImageButton key={elem.Name} width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
     })
     return (<div className="product-content">{output}</div>);

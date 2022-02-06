@@ -8,6 +8,10 @@ import SquareImageButton from './SquareImageButton.js';
 import axios from 'axios';
 import SERVER_ADDR from './SERVER_ADDR.js';
 
+function gotoTest(name) {
+  window.location.replace(`/Products/Details/${name}`);
+}
+
 export default function Test2() {
   const [data, setData] = useState(null);
   let output = null;
@@ -17,17 +21,9 @@ export default function Test2() {
       setData(res.data);
     })
   },[])
-  useEffect(() => {
-    if(data != null) {
-      output = data.data.map((elem,index) => {
-        return <SquareImageButton key={index} width="100%" height="100%" value="" imageSource={'images/'+elem.ImageSource} />;
-      });
-      output =<div className="product-content">{output}</div>;
-    }
-  },[data]);
 
   return (<div className="product-content">
-  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} />
+  <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} onClick={()=>{gotoTest("피카츄")}}/>
   <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} /> 
   <SquareImageButton width="100%" height="100%" value="" imageSource={'images/guiddol.png'} /> 
   <SquareImageButton width="100%" height="100%" value="" imageSource={'images/pikachu.png'} /> 
