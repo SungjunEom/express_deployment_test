@@ -13,6 +13,7 @@ import NotFound from './NotFound';
 import Pokemons from './Pokemons.js';
 import Test2 from './Test2.js';
 import ProductDetail from './ProductDetail.js';
+import IT from './IT.js';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,6 +26,7 @@ ReactDOM.render(
           <Route path="Products" element={<Products />}> 
             <Route path="Pokemons" element={<Pokemons />}/>
             <Route path="Test2" element={<Test2 />} />
+            <Route path="IT" element={<IT />} />
             <Route path="Details/:category/:name" element={<ProductDetail />}/>
             <Route path="" element={<Pokemons/>} />
           </Route>

@@ -13,7 +13,7 @@ export default function Products() {
         <h3 style={{fontSize:"2rem"}}>We are selling now:</h3>
         <Link to="/Products/Pokemons"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Pokemons"/></div></Link>
         <Link to="/Products/Test2"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Pikachu"/></div></Link>
-        <Link to="/Products/Pokemons"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Pokemons"/></div></Link>
+        <Link to="/Products/IT"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="IT"/></div></Link>
         <Link to="/Products/Pokemons"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Pokemons"/></div></Link>
         <Link to="/Products/Pokemons"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Pokemons"/></div></Link>
         <Link to="/Products/Pokemons"><div style={{paddingTop:".1rem",paddingBottom:".1rem"}}><BlackRoundButton width="10rem" height="2rem" value="Pokemons"/></div></Link>
