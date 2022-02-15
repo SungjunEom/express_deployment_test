@@ -4,7 +4,7 @@
 1. MainPage 디렉토리에 들어간 후 `npm install`
 2. server 디렉토리에 들어간 후 `npm install`
 3. `./deploy.sh` 실행
-      *윈도우의 경우에는 deployonwindows.bat 더블클릭
+>윈도우의 경우에는 deployonwindows.bat 더블클릭
 <!--
 4. MainPage의 package.json을 열고 `"proxy": "http://XXXXXXXXXXXXX"` 부분을 자신의 IP로 변경.
     * 자신이 공유기를 사용하고 있다면 외부에서 접속하는 공유기IP로 변경하고 포트포워딩 설정해줄 것.
