@@ -29,7 +29,9 @@ export default function App() {
           <Link to ="/ContactUs"><BoldTextButton width="130px" height="50px" value="CONTACT US" onClick={test} /></Link>
         </div>
       </div>
+      <div className="body-content">
       <Outlet />
+      </div>
       <footer>
         <div className="footer-hr"><hr/></div>
         <div className="footer-content">

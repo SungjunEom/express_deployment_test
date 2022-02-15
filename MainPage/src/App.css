@@ -1,3 +1,6 @@
+.App {
+    overflow:visible;
+}
 .floating-button {
     display: flex;
     justify-content: flex-start;
@@ -34,11 +37,14 @@
     font-weight: bold;
 }
 .head {
+    position: sticky;
     display: flex;
     justify-content:space-around;
     align-items: center;
     padding-top: 0px;
     margin-top: 0px;
+    background-color: rgba(255, 255, 255, 0.767);
+    width:100%;
 }
 .menu {
     display:flex;
@@ -47,6 +53,9 @@
 .site-headline {
     font-size: 50px;
 }
+/* .body-content {
+    padding-top: 8rem;
+} */
 .content {
     display:grid;
     grid-template-columns: 200px 200px 200px 200px 200px;
