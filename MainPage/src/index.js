@@ -14,6 +14,7 @@ import Pokemons from './Pokemons.js';
 import Test2 from './Test2.js';
 import ProductDetail from './ProductDetail.js';
 import IT from './IT.js';
+import Login from './Login.js';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -30,6 +31,7 @@ ReactDOM.render(
             <Route path="Details/:category/:name" element={<ProductDetail />}/>
             <Route path="" element={<Pokemons/>} />
           </Route>
+          <Route path="Test" element={<Login />} />
           <Route path="" element={<Home />} />
           <Route path="*" element={<NotFound />} />
         </Route>
