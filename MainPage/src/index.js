@@ -14,6 +14,7 @@ import Pokemons from './Pokemons.js';
 import Test2 from './Test2.js';
 import ProductDetail from './ProductDetail.js';
 import IT from './IT.js';
+import LoginPage from './LoginPage.js';
 import Login from './Login.js';
 
 ReactDOM.render(

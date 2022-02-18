@@ -4,6 +4,7 @@ class BlackRoundButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            type: props.type,
             width: props.width,
             height: props.height,
             text: props.value,
