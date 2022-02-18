@@ -1,9 +1,20 @@
+import axios from "axios";
 import React, {useState, useEffect} from "react";
+import {Navigate} from 'react-router-dom';
+import {useCookies} from 'react-cookie';
 import BlackRoundButton from "./BlackRoundButton";
 
 export default function Login() {
     const [accountId,setAccountId] = useState(0);
     const [accountPassword,setAccountPassword] = useState(0);
+    const [cookies, removeCookie] = useCookies(['x_auth']);
+    const [hasCookie, setHasCookie] = useState(false);
+
+    useEffect(() => {
+        if(cookies.value != undefined) {
+            setHasCookie(true);
+        }
+    },[cookies])
 
     const handleChange = (arg) => {
         setAccountId(arg.target.value);
@@ -11,7 +22,15 @@ export default function Login() {
 
     const handleSubmit = (arg) => {
         arg.preventDefault();
-        alert(accountId);
+            axios.post('/login',
+            {
+                accountId:accountId,
+                Password:accountPassword
+            }
+            )
+            .then((res) => {
+                console.log(res);
+            })
     }
 
     const handlePassword = (arg) => {
@@ -20,6 +39,12 @@ export default function Login() {
 
     const gotoJoinUs = (arg) => {
         console.log('gotoJoinUs');
+    }
+
+    if(hasCookie) {
+        return (
+            <Navigate to='/Products' />
+        );
     }
 
     return (
