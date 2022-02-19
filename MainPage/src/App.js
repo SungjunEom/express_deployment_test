@@ -19,20 +19,22 @@ function test2() {
 export default function App() {
   return (
     <div className="App">
-      <div className="head">
-        <h1 className="site-headline">TEST WEBPAGE</h1>
-        <div className="menu">
-          <Link to ="/Home"><BoldTextButton width="50px" height="50px" value="HOME" onClick={test} /></Link>
-          <Link to ="/Products"><BoldTextButton width="70px" height="50px" value="PRODUCTS" onClick={test} /></Link>
-          <Link to ="/ButtonParty"><BoldTextButton width="70px" height="50px" value="BUTTONS TEST" onClick={test} /></Link>
-          <Link to ="/Test"><BoldTextButton width="70px" height="50px" value="LOGIN TEST" /></Link>
-          <Link to ="/ContactUs"><BoldTextButton width="130px" height="50px" value="CONTACT US" onClick={test} /></Link>
+      <div className="head-content">
+        <div className="head">
+          <div id="head-container">
+            <h1 className="site-headline">TEST WEBPAGE</h1>
+            <div className="menu">
+              <Link to ="/Home"><BoldTextButton width="36px" height="30px" value="HOME" onClick={test} /></Link>
+              <Link to ="/Products"><BoldTextButton width="83px" height="30px" value="PRODUCTS" onClick={test} /></Link>
+              <Link to ="/ButtonParty"><BoldTextButton width="70px" height="30px" value="BUTTONS TEST" onClick={test} /></Link>
+              <Link to ="/Test"><BoldTextButton width="40px" height="30px" value="LOGIN TEST" /></Link>
+              <Link to ="/ContactUs"><BoldTextButton width="70px" height="30px" value="CONTACT US" onClick={test} /></Link>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="body-content">
-      <Outlet />
-      </div>
-      <footer>
+        <div className="body-content">
+        <Outlet />
+        <footer>
         <div className="footer-hr"><hr/></div>
         <div className="footer-content">
         <div style={{paddingTop:"6rem"}}>
@@ -45,6 +47,8 @@ export default function App() {
           </div>
         </div>
       </footer>
+        </div>
+      </div>
     </div>
   );
 }

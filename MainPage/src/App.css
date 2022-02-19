@@ -37,25 +37,40 @@
     font-weight: bold;
 }
 .head {
-    position: sticky;
+    /* position: sticky; */
     display: flex;
-    justify-content:space-around;
+    justify-content:flex-start;
     align-items: center;
+    flex-direction: column;
     padding-top: 0px;
     margin-top: 0px;
     background-color: rgba(255, 255, 255, 0.767);
     width:100%;
 }
+.head-content {
+    display: grid;
+    grid-template-columns:250px auto;
+}
 .menu {
+    /* position:sticky; */
     display:flex;
-    justify-content:row-reverse;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
+}
+#head-container {
+    position: fixed;
 }
 .site-headline {
+    /* position: sticky; */
     font-size: 50px;
 }
-/* .body-content {
-    padding-top: 8rem;
-} */
+.body-content {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items:flex-start;
+}
 .content {
     display:grid;
     grid-template-columns: 200px 200px 200px 200px 200px;
@@ -136,12 +151,13 @@ html {
     padding-right: 1.5rem;
 }
 footer {
-    background-image: linear-gradient(to bottom left, #772953 0%, #772953 49.9%, rgba(119, 41, 83, 0) 50%, rgba(119, 41, 83, 0) 100%),
-    linear-gradient(to bottom left, #333 0%, #333 100%);
-    background-position: top right;
+    /* background-image: linear-gradient(to bottom left, #772953 0%, #772953 49.9%, rgba(119, 41, 83, 0) 50%, rgba(119, 41, 83, 0) 100%),
+    linear-gradient(to bottom left, #333 0%, #fff 100%); */
+    /* background-position: top right;
     background-repeat: no-repeat;
-    background-size: 25% 15%,100%;
-    color: #d9d9d9;
+    background-size: 25% 15%,100%; */
+    color: #000000;
+    width: 100%;
 }
 .products {
     display:grid;
@@ -160,6 +176,12 @@ footer {
     display:grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.products-wrapper {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 .square-image-button {
     /* border: 1px solid gray; */
