@@ -10,7 +10,6 @@ let db = new sqlite.Database('./Products.sqlite', (err) => {
 
 let auth = (req, res, next) => {
     let token = req.cookies.x_auth;
-    let userId = null;
     jwt.verify(token, 'something', (err,decoded) => {
         const query = `SELECT * FROM Users WHERE ID =  '${decoded}' AND Token = '${token}'`;
         db.all(query,(err,row) => {

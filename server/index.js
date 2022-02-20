@@ -87,6 +87,14 @@ app.get('/auth', auth, (req,res) => {
     })
 })
 
+app.get('/logout',auth,(req,res) => {
+    const query = `UPDATE Users SET Token='' WHERE ID='${req.user.ID}'`;
+    db.run(query,(err) => {
+        if(err) res.json({logout:false});
+        res.json({logout:true});
+    })
+})
+
 app.get('/images/:imgsrc',(req, res) => {
     res.sendFile(path.join(__dirname,`images/${req.params.imgsrc}`));
 })
