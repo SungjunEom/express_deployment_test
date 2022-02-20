@@ -71,7 +71,7 @@ app.post('/api/login', (req,res) => {
                 let token = jwt.sign(row[0].ID,'something');
                 const query = `UPDATE Users SET Token = '${token}' WHERE ID = '${row[0].ID}'`;
                 db.run(query,(err) => {
-                    res.cookie("x_auth",token).json({loginSuccess: true});
+                    res.cookie("toyproject_auth",token).json({loginSuccess: true});
                 })
                 
             })

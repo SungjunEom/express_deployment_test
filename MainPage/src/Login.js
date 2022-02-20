@@ -7,16 +7,17 @@ import BlackRoundButton from "./BlackRoundButton";
 export default function Login(props) {
     const [accountId,setAccountId] = useState(0);
     const [accountPassword,setAccountPassword] = useState(0);
-    const [cookies, removeCookie] = useCookies(['x_auth']);
+    const [cookies, removeCookie] = useCookies(['toyproject_auth']);
     const [hasCookie, setHasCookie] = useState(false);
 
     useEffect(() => {
-        if(cookies.x_auth != 'undefined') {
+        if(cookies.toyproject_auth == undefined || cookies.toyproject_auth == 'undefined') {
+            setHasCookie(false);
+        }
+        else{
+            console.log('cookies: ',cookies.toyproject_auth);
             setHasCookie(true);
             // window.location.replace('/');
-        }
-        else {
-            setHasCookie(false);
         }
         console.log(cookies);
     },[cookies])
@@ -60,7 +61,7 @@ export default function Login(props) {
             await axios.get('/api/logout')
             .then((res) => {
                 console.log(res);
-                removeCookie('x_auth');
+                removeCookie('toyproject_auth');
                 if(res.logout == true) {
                     window.location.reload();
                 }
