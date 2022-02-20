@@ -30,20 +30,20 @@ let db = new sqlite.Database('./Products.sqlite', (err) => {
 //     res.sendFile(path.join(__dirname,'build/index.html'));
 // })
 
-app.post('/register',(req,res) => {
+app.post('/api/register',(req,res) => {
     const newUser = req.body;
     let Password = null;
+    console.log(newUser);
     bcrypt.genSalt(saltRounds, (err,salt) => {
         if(err){ console.log(err.message);}
 
         bcrypt.hash(newUser.Password,salt,(err,hash) => {
             Password = hash;
-            const query = `INSERT INTO Users (ID,Password) VALUES('${newUser.accountId}','${Password}')`;
+            const query = `INSERT INTO Users (ID,Password,Email) VALUES('${newUser.accountId}','${Password}','${newUser.accountEmail}')`;
             db.run(query,(err) => {
                 if(err) {
                     return console.log(err.message);
                 }
-
                 console.log(`New user added: ${newUser.accountId}`);
             })
             res.json({success:true});
@@ -53,7 +53,7 @@ app.post('/register',(req,res) => {
     
 })
 
-app.post('/login', (req,res) => {
+app.post('/api/login', (req,res) => {
     const accountId = req.body.accountId;
     const Password = req.body.Password;
     const query = `SELECT * FROM Users WHERE ID = '${accountId}' `;
@@ -79,7 +79,7 @@ app.post('/login', (req,res) => {
     })
 })
 
-app.get('/auth', auth, (req,res) => {
+app.get('/api/auth', auth, (req,res) => {
     res.json({
         ID:req.user.ID,
         Email:req.user.Email,
@@ -87,7 +87,7 @@ app.get('/auth', auth, (req,res) => {
     })
 })
 
-app.get('/logout',auth,(req,res) => {
+app.get('/api/logout',auth,(req,res) => {
     const query = `UPDATE Users SET Token='' WHERE ID='${req.user.ID}'`;
     db.run(query,(err) => {
         if(err) res.json({logout:false});

@@ -28,7 +28,7 @@ export default function Login(props) {
     const handleSubmit = (arg) => {
         arg.preventDefault();
         let temp = async() => {
-            await axios.post('/login',
+            await axios.post('/api/login',
             {
                 accountId:accountId,
                 Password:accountPassword
@@ -38,6 +38,9 @@ export default function Login(props) {
                 console.log(res);
                 if(res.data.loginSuccess==true) {
                     window.location.replace('/');
+                }
+                else {
+                    alert('아이디 및 비밀번호가 틀렸습니다.');
                 }
             })
         };
@@ -49,12 +52,12 @@ export default function Login(props) {
     }
 
     const gotoJoinUs = (arg) => {
-        console.log('gotoJoinUs');
+        window.location.replace('/Register');
     }
 
     const handleLogout = (arg) => {
         let temp = async() => {
-            await axios.get('/logout')
+            await axios.get('/api/logout')
             .then((res) => {
                 console.log(res);
                 removeCookie('x_auth');

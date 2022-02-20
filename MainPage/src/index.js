@@ -16,6 +16,7 @@ import ProductDetail from './ProductDetail.js';
 import IT from './IT.js';
 import LoginPage from './LoginPage.js';
 import Login from './Login.js';
+import Register from './Register.js';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -32,7 +33,8 @@ ReactDOM.render(
             <Route path="Details/:category/:name" element={<ProductDetail />}/>
             <Route path="" element={<Pokemons/>} />
           </Route>
-          <Route path="Test" element={<Login />} />
+          <Route path="Login" element={<Login />} />
+          <Route path="Register" element={<Register />} />
           <Route path="" element={<Home />} />
           <Route path="*" element={<NotFound />} />
         </Route>
