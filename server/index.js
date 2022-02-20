@@ -56,19 +56,24 @@ app.post('/login', (req,res) => {
     const Password = req.body.Password;
     const query = `SELECT * FROM Users WHERE ID = '${accountId}' `;
     db.all(query,(err,row) => {
-        console.log(row[0].ID);
-        bcrypt.compare(Password,row[0].Password,(err,isMatch) => {
-            if(err){
-                console.log(err.message);
-                res.json({success: false});
-            }
-            let token = jwt.sign(row[0].ID,'something');
-            const query = `UPDATE Users SET Token = '${token}' WHERE ID = '${row[0].ID}'`;
-            db.run(query,(err) => {
-                res.cookie("x_auth",token).json({loginSuccess: true});
+        // console.log(row[0].ID);
+        if(row.length == 0) {
+            res.json({success: false});
+        }
+        else {
+            bcrypt.compare(Password,row[0].Password,(err,isMatch) => {
+                if(err){
+                    console.log(err.message);
+                    res.json({success: false});
+                }
+                let token = jwt.sign(row[0].ID,'something');
+                const query = `UPDATE Users SET Token = '${token}' WHERE ID = '${row[0].ID}'`;
+                db.run(query,(err) => {
+                    res.cookie("x_auth",token).json({loginSuccess: true});
+                })
+                
             })
-            
-        })
+        }
     })
 })
 

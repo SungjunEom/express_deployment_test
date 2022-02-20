@@ -22,7 +22,8 @@ export default function Login() {
 
     const handleSubmit = (arg) => {
         arg.preventDefault();
-            axios.post('/login',
+        let temp = async() => {
+            await axios.post('/login',
             {
                 accountId:accountId,
                 Password:accountPassword
@@ -31,6 +32,8 @@ export default function Login() {
             .then((res) => {
                 console.log(res);
             })
+        };
+        temp();
     }
 
     const handlePassword = (arg) => {
