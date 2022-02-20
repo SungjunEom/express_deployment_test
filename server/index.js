@@ -59,7 +59,11 @@ app.post('/api/login', (req,res) => {
     const query = `SELECT * FROM Users WHERE ID = '${accountId}' `;
     db.all(query,(err,row) => {
         // console.log(row[0].ID);
-        if(row.length == 0) {
+        if(err) {
+            console.log(err.message);
+            res.json({success: false});
+        }
+        else if(row.length == 0) {
             res.json({success: false});
         }
         else {
