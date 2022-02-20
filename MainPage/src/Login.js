@@ -11,7 +11,7 @@ export default function Login(props) {
     const [hasCookie, setHasCookie] = useState(false);
 
     useEffect(() => {
-        if(cookies.toyproject_auth == undefined || cookies.toyproject_auth == 'undefined') {
+        if(cookies.toyproject_auth == undefined || cookies.toyproject_auth == 'undefined' || cookies.toyproject_auth == null) {
             setHasCookie(false);
         }
         else{
