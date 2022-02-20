@@ -8,6 +8,8 @@ const { createBrotliCompress } = require('zlib');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const { application } = require('express');
+const {auth} = require('./auth');
 
 
 app.use(express.static(path.join(__dirname,'/build')));
@@ -74,6 +76,14 @@ app.post('/login', (req,res) => {
                 
             })
         }
+    })
+})
+
+app.get('/auth', auth, (req,res) => {
+    res.json({
+        ID:req.user.ID,
+        Email:req.user.Email,
+        Role:req.user.Role
     })
 })
 
