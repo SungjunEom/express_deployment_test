@@ -4,16 +4,21 @@ import {Navigate} from 'react-router-dom';
 import {useCookies} from 'react-cookie';
 import BlackRoundButton from "./BlackRoundButton";
 
-export default function Login() {
+export default function Login(props) {
     const [accountId,setAccountId] = useState(0);
     const [accountPassword,setAccountPassword] = useState(0);
     const [cookies, removeCookie] = useCookies(['x_auth']);
     const [hasCookie, setHasCookie] = useState(false);
 
     useEffect(() => {
-        if(cookies.value != undefined) {
+        if(cookies.x_auth != 'undefined') {
             setHasCookie(true);
+            // window.location.replace('/');
         }
+        else {
+            setHasCookie(false);
+        }
+        console.log(cookies);
     },[cookies])
 
     const handleChange = (arg) => {
@@ -31,6 +36,9 @@ export default function Login() {
             )
             .then((res) => {
                 console.log(res);
+                if(res.data.loginSuccess==true) {
+                    window.location.replace('/');
+                }
             })
         };
         temp();
@@ -44,9 +52,27 @@ export default function Login() {
         console.log('gotoJoinUs');
     }
 
+    const handleLogout = (arg) => {
+        let temp = async() => {
+            await axios.get('/logout')
+            .then((res) => {
+                console.log(res);
+                removeCookie('x_auth');
+                if(res.logout == true) {
+                    window.location.reload();
+                }
+            })
+        }
+        temp();
+    }
+
     if(hasCookie) {
         return (
-            <Navigate to='/Products' />
+            <div style={{display: 'flex',justifyContent:'center',alignItems:'center',width:'100%',height:'70vh',flexDirection:'column',marginTop:'0px'}}>
+                <div><h1>LOGIN</h1></div>
+                <h3>이미 로그인 되어 있습니다. 로그아웃 하시겠습니까?</h3>
+                <BlackRoundButton width="100px" height="30px" value="LOGOUT" onClick={handleLogout}/>
+            </div>
         );
     }
 
