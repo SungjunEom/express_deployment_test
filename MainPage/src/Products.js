@@ -5,8 +5,11 @@ import BlackRoundButton from './BlackRoundButton.js';
 import BoldTextButton from './BoldTextButton.js';
 import ButtonParty from './ButtonParty.js';
 import {Outlet, Link} from "react-router-dom";
+import {useCookies} from 'react-cookie';
 
 export default function Products() {
+  const [cookies] = useCookies(['toyproject_auth']);
+  if (cookies.toyproject_auth != undefined && cookies.toyproject_auth != 'undefined') {
   return (
     <div className="products-wrapper">
       <div style={{paddingTop:"50px"}}>
@@ -27,5 +30,9 @@ export default function Products() {
         <Outlet />
       </div>
     </div>
+  );
+  }
+  return (
+    <h1>로그인 후 볼 수 있습니다.</h1>
   );
 }

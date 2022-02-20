@@ -27,7 +27,7 @@ export default function App() {
               <Link to ="/Home"><BoldTextButton width="36px" height="30px" value="HOME" onClick={test} /></Link>
               <Link to ="/Products"><BoldTextButton width="83px" height="30px" value="PRODUCTS" onClick={test} /></Link>
               <Link to ="/ButtonParty"><BoldTextButton width="70px" height="30px" value="BUTTONS TEST" onClick={test} /></Link>
-              <Link to ="/Login"><BoldTextButton width="40px" height="30px" value="LOGIN TEST" /></Link>
+              <Link to ="/Login"><BoldTextButton width="40px" height="30px" value="LOGIN" /></Link>
               <Link to ="/ContactUs"><BoldTextButton width="70px" height="30px" value="CONTACT US" onClick={test} /></Link>
             </div>
           </div>
