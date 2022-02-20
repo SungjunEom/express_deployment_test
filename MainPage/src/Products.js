@@ -33,6 +33,8 @@ export default function Products() {
   );
   }
   return (
+    <div style={{width:'100%',height:'30rem',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
     <h1>로그인 후 볼 수 있습니다.</h1>
+    </div>
   );
 }
